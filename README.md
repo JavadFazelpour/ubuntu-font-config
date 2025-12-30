@@ -60,46 +60,56 @@ nano ~/.config/fontconfig/conf.d/99-persian-arabic-fix.conf
 <fontconfig>
 
   <match target="pattern">
-    <test name="family" qual="any">
-      <string>Arial</string>
-      <string>Tahoma</string>
-      <string>Helvetica</string>
-      <string>Times New Roman</string>
-      <string>Times</string>
-    </test>
+    <test name="family" qual="any"><string>Arial</string></test>
     <edit name="family" mode="prepend" binding="strong">
       <string>Vazirmatn</string>
       <string>IBM Plex Sans Arabic</string>
-      <string>IBM Plex Sans Hebrew</string>
-      <string>Noto Sans Arabic</string>
-      <string>Noto Sans Hebrew</string>
     </edit>
   </match>
 
   <match target="pattern">
-    <test name="lang" compare="contains"><string>fa</string></test>
-    <test name="family"><string>sans-serif</string></test>
+    <test name="family" qual="any"><string>Tahoma</string></test>
     <edit name="family" mode="prepend" binding="strong">
       <string>Vazirmatn</string>
+      <string>IBM Plex Sans Arabic</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="family" qual="any"><string>Times New Roman</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>IBM Plex Sans Hebrew</string>
+      <string>Vazirmatn</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="family" qual="any"><string>Helvetica</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>Vazirmatn</string>
+      <string>IBM Plex Sans Arabic</string>
     </edit>
   </match>
 
   <match target="pattern">
     <test name="lang" compare="contains"><string>ar</string></test>
-    <test name="family"><string>sans-serif</string></test>
+    <edit name="family" mode="prepend" binding="strong">
+      <string>IBM Plex Sans Arabic</string>
+      <string>Vazirmatn</string>
+    </edit>
+  </match>
+
+  <match target="pattern">
+    <test name="lang" compare="contains"><string>fa</string></test>
     <edit name="family" mode="prepend" binding="strong">
       <string>Vazirmatn</string>
-      <string>IBM Plex Sans Arabic</string>
-      <string>Noto Sans Arabic</string>
     </edit>
   </match>
 
   <match target="pattern">
     <test name="lang" compare="contains"><string>he</string></test>
-    <test name="family"><string>sans-serif</string></test>
     <edit name="family" mode="prepend" binding="strong">
       <string>IBM Plex Sans Hebrew</string>
-      <string>Noto Sans Hebrew</string>
     </edit>
   </match>
 
